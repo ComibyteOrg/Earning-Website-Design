@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="fontawesome-free-6.4.2-web/css/all.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="shortcut icon" href="evolveimages/logo (3).png" type="image/x-icon">
+    <title>Evolve Ads</title>
+</head>
+<body>
+    
+    <div class="generaldiv">
+            <!-- Side Nav -->
+        <section id="navbar">
+                <nav>
+                    <ul>
+                        <li class="cancel"><span class="close"><i class="fa fa-close"></i></span></li>
+                        <li><a href="#"><i class="fas fa-dashboard"></i> <span>Dashboard</span> </a></li>
+                        <li><a href="#"><i class="fas fa-users"></i> <span>Referral</span> </a></li>
+                        <li><a href="#"><i class="fas fa-tasks"></i><span>Tasks</span> </a>
+                        <ul>
+                            <li><a href="#"><i class="fas fa-tasks"></i><span>Level 1</span> </a></li>
+                            <li><a href="#"><i class="fas fa-tasks"></i><span>Level 2</span> </a></li>
+                            <li><a href="#"><i class="fas fa-tasks"></i><span>Level 3</span> </a></li>
+                            <li><a href="#"><i class="fas fa-tasks"></i><span>Level 4</span> </a></li>
+                            <li><a href="#"><i class="fas fa-tasks"></i><span>Level 5</span> </a></li>
+                        </ul>
+                        </li>
+                        <li><a href="#"><i class="fas fa-link"></i> <span>Shortlink</span> </a></li>
+                        <li><a href="#"><i class="fas fa-share-alt-square"></i><span>Sponsored Post</span> </a></li>
+                        <li><a href="#"><i class="fas fa-lock"></i> <span>Change Password</span> </a></li>
+                        <li><a href="#"><i class="fas fa-user"></i> <span>Profile</span> </a></li>
+                        <li><a href="#"><i class="fas fa-wallet"></i> <span>Withdraw</span> </a></li>
+                        <li><a href="#"><i class="fas fa-copy"></i> <span>Free Coupon</span> </a></li>
+                        <li><a href="#"><i class="fas fa-history"></i> <span>Account History</span> </a></li>
+                        <li><a href="#"><i class="fas fa-question-circle"></i> <span> FAQ</span></a></li>
+                        <li><a href="#"><i class="fas fa-phone-square"></i> <span>Customer Service</span> </a></li>
+                        <li><a href="#"><i class="fas fa-arrow-circle-left"></i> <span>Logout</span> </a></li>
+                    </ul>
+                </nav>
+        </section>
+
+
+        <!-- Dashboard section -->
+        <div class="dashboard">
+            <div class="toplist">
+                <div class="topleft">
+                    <div class="menu menubars"><i class="fa fa-bars" aria-hidden="true"></i></div>
+                    <div class="balance">
+                        <h3><i class="fas fa-wallet"></i> N1000</h3>
+                    </div>
+                </div>
+                <div class="topright">
+                    <span class="announcement"><i class="fa fa-bullhorn" aria-hidden="true"></i></span>
+                    <marquee behavior="scroll" direction="left">Welcome to EvovleAds, Please Do well to join all our accounts on every social platform in order to stay up to date on important informations</marquee>
+                </div>
+            </div>
+
+            <div class="balancediv">
+                <div class="totalbalance">
+                    <h5><i class="fas fa-wallet"></i> Balance</h5>
+                    <h1>N1000</h1>
+                </div>
+                <div class="totalbalance">
+                    <h5><i class="fa fa-user" aria-hidden="true"></i> Username</h5>
+                    <h1>User</h1>
+                </div>
+                <div class="totalbalance">
+                    <h5><i class="fas fa-users"></i> Referrals</h5>
+                    <h1>0</h1>
+                </div>
+                <div class="totalbalance">
+                    <h5><i class="fas fa-truck-loading"></i> Current Level</h5>
+                    <h1>Level 1</h1>
+                </div>
+                <div class="reflink">
+                    <div class="successAlert">
+                        <i class="fas fa-check-circle"></i>    Your referral link have been copied succesfully
+                    </div>
+                    <h5><i class="fas fa-link"></i> Referral Link</h5>
+                    <input type="text" id="referalfield" value="https://evolveads.com.ng?ref=204840" readonly><span class="copy"><i class="fas fa-copy"></i></span>
+                </div>
+            </div>
+
+            <div class="bottomdiv">
+                <h2>How to Earn On EveolveAds</h2>
+                <div class="line"></div>
+                <div class="bottomone">
+                    <div class="perform">
+                        <span class="performicon">
+                            <i class="fas fa-book"></i>
+                        </span>
+                        <h2>Perform Sponsored ads</h2>
+                    </div>
+                    <div class="perform">
+                        <span class="performicon">
+                            <i class="fas fa-question-circle"></i>
+                        </span>
+                        <h2>Engage in Task</h2>
+                    </div>
+                    <div class="perform">
+                        <span class="performicon">
+                            <i class="fas fa-link"></i>
+                        </span>
+                        <h2>Engage in shortlinks</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="switch">
+                <div class="light">Mode</div>
+                <div class="dark"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        const light = document.querySelector('.light');
+        const generalbody = document.querySelector('body')
+
+        light.addEventListener('click', () =>{
+            light.classList.toggle('active')
+            generalbody.classList.toggle('darkmode')
+
+        })
+    </script>
+
+    
+
+
+
+    <script src="script.js"></script>
+    <script src="fontawesome-free-6.4.2-web/js/all.js"></script>
+</body>
+</html>

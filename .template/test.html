@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Persistent Timer</title>
+    <style>
+        #timer {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="timer">0</div>
+    <button class="countButton" data-time="1">Count 1</button>
+    <button class="countButton" data-time="2">Count 2</button>
+    <button class="countButton" data-time="3">Count 3</button>
+    <button class="countButton" data-time="4">Count 4</button>
+    <button class="countButton" data-time="5">Count 5</button>
+    <button id="resetButton">Reset</button>
+
+    <script>
+        let timerInterval;
+        let timerValue = 0;
+        let startTime = null;
+        let counting = false;
+
+        const timerDisplay = document.getElementById('timer');
+        const resetButton = document.getElementById('resetButton');
+        const countButtons = document.querySelectorAll('.countButton');
+
+        // Function to update the timer display
+        function updateTimerDisplay() {
+            timerDisplay.textContent = timerValue;
+        }
+
+        // Function to calculate elapsed time
+        function calculateElapsedTime() {
+            if (startTime) {
+                const currentTime = Date.now();
+                timerValue = Math.floor((currentTime - startTime) / 1000);
+                localStorage.setItem('timerValue', timerValue);
+                updateTimerDisplay();
+                if(timerValue >= 30){
+                  clearInterval(timerInterval)
+                  counting = false;
+                }
+            }
+        }
+
+        // Function to start the timer
+        function startTimer() {
+            if (!counting) {
+                counting = true;
+                startTime = Date.now() - (localStorage.getItem('timerValue') || 0) * 1000;
+                timerInterval = setInterval(calculateElapsedTime, 1000);
+            }
+        }
+
+        // Event listener for count buttons
+        countButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                startTimer();
+            });
+        });
+
+        // Event listener for reset button
+        resetButton.addEventListener('click', () => {
+            clearInterval(timerInterval);
+            timerValue = 0;
+            startTime = null;
+            localStorage.removeItem('timerValue');
+            updateTimerDisplay();
+            counting = false;
+        });
+
+        // Initialize the timer display
+        timerValue = parseInt(localStorage.getItem('timerValue')) || 0;
+        startTime = Date.now() - (timerValue * 1000);
+        updateTimerDisplay();
+        if (timerValue > 0) {
+            startTimer();
+        }
+    </script>
+
+</body>
+</html>

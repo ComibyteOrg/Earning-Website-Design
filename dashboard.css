@@ -1,0 +1,289 @@
+/* Default setting */
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+:root{
+    --primary-color:#290656;
+    --secondary-color: #fff;
+    --transparent-blue:#1600337a;
+    --light-blue: #ecf4ff;
+    --success-color: #ceffce;
+    --gray-color:#8b8b8b;
+}
+
+.darkmode{
+    --primary-color:#fff;
+    --secondary-color:#290656;
+    --light-blue: #001736;
+    --transparent-blue:#f4ebff7a;
+}
+
+::selection{
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+@font-face {
+    font-family: robatto;
+    src: url(Roboto/Roboto-Medium.ttf);
+}
+@font-face {
+    font-family: robattothin;
+    src: url(Roboto/Roboto-Thin.ttf);
+}
+@font-face {
+    font-family: robattobold;
+    src: url(Roboto/Roboto-Bold.ttf);
+}
+
+body{
+    font-family: robatto, sans-serif, Arial;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    transition: .5s;
+}
+
+/* Navigation section */
+nav{
+    width: 0;
+    max-width: 100%;
+    background-color: var(--primary-color);
+    height: 100vh;
+    line-height: 30px;
+    overflow-y: scroll;
+    position: sticky;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    transform: translateX(-400px);
+    transition: .5s;
+}
+nav::-webkit-scrollbar{
+    display: none;
+}
+nav.active{
+    width: 250px;
+    transform: translateX(0);
+}
+nav ul{
+    list-style: none;
+}
+nav ul li a{
+    text-decoration: none;
+    color: var(--secondary-color);
+    padding: 15px;
+    display: block;
+    transition: .5s;
+}
+nav ul li a span{
+    margin-left: 15px;
+}
+nav ul li a:hover{
+    background-color: var(--transparent-blue);
+}
+nav ul li ul{
+    display: none;
+    background-color: var(--transparent-blue);
+    position: relative;
+}
+nav ul li:hover ul{
+    display: block;
+}
+.cancel{
+    display: flex;
+    justify-content: end;
+}
+.close{
+    border: 2px solid var(--secondary-color);
+    color: var(--secondary-color);
+    margin: 10px;
+    padding: 0px 8px;
+    border-radius: 50%;
+    transition: .5s;
+}
+.close:hover{
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+@media (max-width:1050px){
+    .navbar{
+        width: 250px;
+        max-width: 100%;
+    }
+    nav{
+        position: fixed;
+        z-index: 100;
+    }
+}
+
+
+
+/* dashboard */
+.generaldiv, .toplist, .topright, .topleft{
+    display: flex;
+}
+.dashboard{
+    width: 100%;
+    padding: 10px 30px;
+}
+.topleft{
+    align-items: center;
+    max-width: 100%;
+}
+.topleft .menu{
+    margin-right: 60px;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    margin: 10px;
+    padding: 8px 9px;
+    border-radius: 50%;
+    transition: .5s;
+}
+.topleft .menu:hover{
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+.toplist{
+    justify-content: space-between;
+    align-items: center;
+}
+.balance{
+    margin-left: 30px;
+    padding: 10px;
+    text-align: center;
+    width: 300px;
+    max-width: 100%;
+    color: var(--primary-color);
+    border-radius: 30px;
+}
+.topright{
+    width: 500px;
+    max-width: 100%;
+    background-color: var(--light-blue);
+    padding: 15px;
+    border-radius: 30px;
+}
+@media (max-width:900px) {
+    .toplist{
+        flex-direction: column;
+        justify-content: center;
+    }
+    .topright{
+        width: 400px;
+    }
+}
+
+
+/* Task balance and level section */
+.totalbalance{
+    width: 700px;
+    max-width: 100%;
+    background-color: var(--light-blue);
+    padding: 40px;
+    margin: 20px auto;
+    border-bottom: 5px solid var(--primary-color);
+    border-radius: 20px;
+    color: var(--primary-color);
+}
+.reflink{
+    width: 700px;
+    max-width: 100%;
+    margin: 45px auto;
+    position: relative;
+}
+#referalfield{
+    width: 100%;
+    padding:10px 20px;
+    outline: none;
+    border: 1px solid var(--primary-color);
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    margin-top: 10px;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+.copy{
+    position: absolute;
+    right: 0px;
+    bottom: 1px;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    padding: 8px 20px;
+}
+.successAlert{
+    background-color: var(--success-color);
+    color: black;
+    padding: 20px;
+    margin: 20px auto;
+    display: none;
+}
+.successAlert.active{
+    display: block;
+}
+
+
+/* perform section */
+.perform{
+    width:300px;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 2px var(--gray-color);
+    text-align: center;
+    color: var(--transparent-blue);
+}
+.performicon{
+    font-size: 200px;
+    text-align: center;
+    margin: 20px auto;
+    color: var(--transparent-blue);
+}
+.bottomone{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.bottomdiv h2{
+    text-align: center; 
+}
+.line{
+    background: var(--primary-color);
+    height: 2px;
+    width: 120px;
+    max-width: 100%;
+    margin: 0px auto 30px auto;
+}
+.switch{
+    width: 100px;
+    height: 20px;
+    border: 2px solid var(--primary-color);
+    display: flex;
+    margin: 20px auto;
+    
+}
+.light{
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    font-size: 12px;
+    text-align: center;
+    width: 50%;
+    height: 100%;
+    transition: .5s;
+    cursor: pointer;
+}
+.light.active{
+    animation: change .4s ease-in-out;
+    transform: translateX(100%);
+}
+
+@keyframes change {
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(100%);
+    }
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="tasks.css">
+    <link rel="stylesheet" href="fontawesome-free-6.4.2-web/css/all.css">
+    <title>Evolve Ads section</title>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="topquery">
+            <h3><i class="fas fa-money-bill"></i> PAGE 1/10 <i class="fas fa-money-bill"></i></h3>
+        <small>Please Complete all tasks and click on the Complete button to move to the next page</small>
+
+
+        <div class="tasksdiv">
+            <h5><i class="fas fa-gift"></i> TAKE TASK AND CLAIM BONUS <i class="fas fa-gift"></i></h5>
+            <small>Please click on the watch ads button to be redirected to the advertisment. It is mandatory to stay on the ads page for 10 seconds before clicking on the back button</small><br><br>
+            <a class="btn"><i class="fas fa-television"></i> Watch Advert <i class="fas fa-television"></i></a> 
+        </div>
+
+        <div class="tasksdiv">
+            <h5><i class="fas fa-gift"></i> TAKE TASK AND CLAIM BONUS <i class="fas fa-gift"></i></h5>
+            <small>Please click on the watch ads button to be redirected to the advertisment. It is mandatory to stay on the ads page for 10 seconds before clicking on the back button</small><br><br>
+            <a class="btn"><i class="fas fa-television"></i> Watch Advert <i class="fas fa-television"></i></a> 
+        </div>
+
+        <div class="tasksdiv">
+            <h5><i class="fas fa-gift"></i> TAKE TASK AND CLAIM BONUS <i class="fas fa-gift"></i></h5>
+            <small>Please click on the watch ads button to be redirected to the advertisment. It is mandatory to stay on the ads page for 10 seconds before clicking on the back button</small><br><br>
+            <a class="btn"><i class="fas fa-television"></i> Watch Advert <i class="fas fa-television"></i></a> 
+        </div>
+
+        <div class="tasksdiv">
+            <h5><i class="fas fa-gift"></i> TAKE TASK AND CLAIM BONUS <i class="fas fa-gift"></i></h5>
+            <small>Please click on the watch ads button to be redirected to the advertisment. It is mandatory to stay on the ads page for 10 seconds before clicking on the back button</small><br><br>
+            <a class="btn"><i class="fas fa-television"></i> Watch Advert <i class="fas fa-television"></i></a> 
+        </div>
+
+        <div class="tasksdiv">
+            <h5><i class="fas fa-gift"></i> TAKE TASK AND CLAIM BONUS <i class="fas fa-gift"></i></h5>
+            <small>Please click on the watch ads button to be redirected to the advertisment. It is mandatory to stay on the ads page for 10 seconds before clicking on the back button</small><br><br>
+            <a class="btn"><i class="fas fa-television"></i> Watch Advert <i class="fas fa-television"></i></a> 
+        </div>
+
+        <div class="tasksdiv">
+            <h5><i class="fas fa-gift"></i> TAKE TASK AND CLAIM BONUS <i class="fas fa-gift"></i></h5>
+            <small>Please click on the watch ads button to be redirected to the advertisment. It is mandatory to stay on the ads page for 10 seconds before clicking on the back button</small><br><br>
+            <a class="btn"><i class="fas fa-television"></i> Watch Advert <i class="fas fa-television"></i></a> 
+        </div>
+
+        <small class="error"></small><br>
+        <button class="btn next">Completed. Next</button>
+    </div>
+    </div>
+
+
+    <script>
+        const error = document.querySelector('.error')
+        const disablebtn = document.querySelector('.next')
+        let timer = 0;
+
+        let counting = setInterval(() => {
+            timer++
+            if(timer >= 90){
+                clearInterval(counting)
+            } 
+        }, 1000); 
+
+        disablebtn.addEventListener('click', () =>{
+            if(timer < 90){
+                error.innerHTML = "You need to Complete all tasks at the apropriate time <i class='fa fa-times' aria-hidden='true'></i>"
+            }else{
+                location.href = 'ads2.html'
+            }
+        })
+        
+
+    </script>
+    <script src="fontawesome-free-6.4.2-web/js/all.js"></script>
+</body>
+</html>

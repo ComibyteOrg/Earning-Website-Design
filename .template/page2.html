@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Page 2</title>    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <h1>Delete Div</h1>
+    <button id="deleteButton">Delete Div for 12 hours</button>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get the div ID from sessionStorage
+            const divId = sessionStorage.getItem('currentDiv');
+
+            // If no div ID is available, redirect back to Page 1
+            if (!divId) {
+                window.location.href = 'file.html';
+            }
+
+            document.getElementById('deleteButton').addEventListener('click', function() {
+                // Set an expiration time for 12 hours (12 hours = 12 * 60 * 60 * 1000 milliseconds)
+                const expiryTime = new Date().getTime() + (12 * 60 * 60 * 1000);
+                
+                // Save the expiry time in localStorage
+                localStorage.setItem(divId, expiryTime);
+                
+                // Redirect back to Page 1
+                window.location.href = 'file.html';
+            });
+        });
+    </script>
+</body>
+</html>

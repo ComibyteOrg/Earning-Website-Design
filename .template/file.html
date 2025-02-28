@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page 1</title>
+</head>
+<body>
+    <div id="div1" class="div-box">
+        <p>Div 1</p>
+        <button onclick="goToPage2('div1')">Go to Page 2</button>
+    </div>
+    <div id="div2" class="div-box">
+        <p>Div 2</p>
+        <button onclick="goToPage2('div2')">Go to Page 2</button>
+    </div>
+    <div id="div3" class="div-box">
+        <p>Div 3</p>
+        <button onclick="goToPage2('div3')">Go to Page 2</button>
+    </div>
+
+    <script>
+        // Check for divs that have been marked as deleted
+        document.addEventListener('DOMContentLoaded', function() {
+            const divIds = ['div1', 'div2', 'div3'];
+            divIds.forEach(id => {
+                const expiryTime = localStorage.getItem(id);
+                if (expiryTime && new Date().getTime() < expiryTime) {
+                    document.getElementById(id).style.display = 'none';
+                }
+            });
+        });
+
+        function goToPage2(divId) {
+            // Save the div ID in sessionStorage to access it on page 2
+            sessionStorage.setItem('currentDiv', divId);
+            window.location.href = 'page2.html'; // Redirect to Page 2
+        }
+    </script>
+</body>
+</html>
